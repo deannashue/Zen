@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:me="clr-namespace:Zen.MarkupExtensions"
+             xmlns:o="clr-namespace:Octane.Xam.VideoPlayer;assembly=Octane.Xam.VideoPlayer"
+             x:Class="Zen.Views.PlayClip"   
+             >
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0">
+        </OnPlatform>
+    </ContentPage.Padding>
+
+    <ContentPage.Content>
+
+
+
+
+        <o:VideoPlayer Failed="VideoPlayer_Failed" Playing="VideoPlayer_Playing" Paused="VideoPlayer_Paused"  AutoPlay="True" Source="http://www.shueville.com/zen_videos/gentle_rapid.mp4" />
+
+
+
+
+
+
+
+
+
+    </ContentPage.Content>
+</ContentPage>

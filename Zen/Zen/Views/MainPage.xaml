@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Zen"
+             x:Class="Zen.Views.MainPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource BackgroundColor}">
+
+
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+
+
+
+        
+
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+
+            <Image Source="{local:MarkupExtensions.EmbeddedImage Zen.Images.bigzenlogo.png}" />
+            
+
+            <Button x:Name="Register"
+                Text="register"
+                TextColor="#ffffff" 
+                HeightRequest="60" WidthRequest="200"
+                BackgroundColor="Transparent"
+                BorderColor="Transparent"
+                Clicked="Register_Clicked"
+                />
+
+            <Button x:Name="Guest"
+                    Text="view as guest" 
+                    TextColor="#ffffff"
+                    HeightRequest="60" WidthRequest="200"
+                    BackgroundColor="Transparent"
+                    BorderColor="Transparent"
+                    Clicked="Guest_Clicked"
+                    />
+        </StackLayout>
+
+
+    </StackLayout>
+
+
+   
+
+</ContentPage>

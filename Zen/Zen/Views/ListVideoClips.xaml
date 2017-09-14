@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Zen.Views.ListVideoClips"
+             xmlns:local="clr-namespace:Zen"
+             BackgroundColor="{StaticResource BackgroundColor}"
+             NavigationPage.HasNavigationBar="False"
+             >
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BorderedImage" TargetType="Button">
+                <Setter Property="BorderColor" Value="White" />
+                <Setter Property="BorderWidth" Value="30" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <StackLayout>
+        <Label Text="Sample Videos" TextColor="White" VerticalOptions="Center"  FontFamily="Helvetica-Light" FontSize="Medium" FontAttributes="Bold"></Label>
+
+        <StackLayout Padding="20, 0, 10, 0">
+            <ListView ItemsSource="{Binding Items}"
+            ItemTapped="Handle_ItemTapped"
+            CachingStrategy="RecycleElement"
+            RowHeight="120" SeparatorVisibility="None"
+                      
+                      
+                      BackgroundColor="{StaticResource BackgroundColor}"
+           >
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"  >
+                                <Label Text="{Binding Rank}" VerticalOptions="CenterAndExpand" TextColor="White" FontFamily="Arial-BoldItalicMT " FontSize="16" FontAttributes="Bold,Italic" />
+                                <Image Source="{local:MarkupExtensions.EmbeddedImage Zen.Images.colorado_rain.png}" HeightRequest="90" Style="{StaticResource BorderedImage}" />
+                                <StackLayout Orientation="Vertical" VerticalOptions="End" HorizontalOptions="CenterAndExpand" Spacing="0"   >
+                                    <Label Text="{Binding Title}" VerticalOptions="End" TextColor="White" FontFamily="sans-serif-thin" FontAttributes="Bold" FontSize="Medium" />
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="0" >
+                                        <Label Text="Video/Plays:" TextColor="White" FontFamily="Helvetica-Light" FontSize="Small" />
+                                        <Label Text="{Binding Plays}" TextColor="White" FontFamily="Helvetica-Light" FontSize="Small" />
+                                    </StackLayout>
+                                    <Label Text="{Binding OwnerName}" VerticalOptions="End"  TextColor="White" FontFamily="Helvetica-Light" FontSize="Small" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+            <Label Text="Navigation Menu Here" TextColor="White"></Label>
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>

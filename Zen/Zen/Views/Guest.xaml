@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 x:Class="Zen.Views.Guest"
+                 xmlns:local="clr-namespace:Zen"
+                 NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Image Source="{local:MarkupExtensions.EmbeddedImage Zen.Images.atlantic.jpg}" Opacity=".8" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Aspect="AspectFill"></Image>
+            <StackLayout Padding="20, 50, 20, 20" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="SizeProportional" >
+                <Label TextColor="ForestGreen"  Text= "{Binding GuestCarousel[1].Theme}" />
+                <Label Text="Upload 30 seconds of video..." />
+            
+            </StackLayout>
+
+            <StackLayout AbsoluteLayout.LayoutBounds="1, 1, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+                    <Button HorizontalOptions="End"  Clicked="DoSkip"  TextColor ="White" Text="SKIP" Grid.Row="0" Grid.Column="2" />
+                    <StackLayout  Orientation="Horizontal"  Grid.Row="0" Grid.Column="1">
+                        <Image Source="unselected_circle.png" />
+                        <Image Source="selected_circle.png" />
+                        <Image Source="unselected_circle.png" />
+                    </StackLayout>
+                    <Label HorizontalOptions="Start"  TextColor ="White" Text="" Grid.Row="0" Grid.Column="0" />
+
+                </Grid>
+            </StackLayout>
+            
+        </AbsoluteLayout>
+        
+        
+
+        
+
+    </ContentPage.Content>
+</ContentPage>
+    
+    
+
